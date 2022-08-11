@@ -1,6 +1,8 @@
+import classes from './Profile.module.css';
+
 function Profile() {
     return (
-        <div className='content'>
+        <div className={classes.content}>
             <div>
                 Main content
                 <div>Posts</div>

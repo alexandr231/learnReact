@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.header img {
+    width: 50px;
+}
