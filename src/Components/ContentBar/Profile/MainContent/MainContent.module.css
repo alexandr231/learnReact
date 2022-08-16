@@ -1,0 +1,15 @@
+.mainContent {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid black;
+    flex-grow: 1;
+}
+.posts {
+    flex-grow: 2;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

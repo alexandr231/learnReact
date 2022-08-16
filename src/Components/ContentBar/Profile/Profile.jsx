@@ -1,13 +1,10 @@
 import classes from './Profile.module.css';
+import MainContent from './MainContent/MainContent';
 
 function Profile() {
     return (
         <div className={classes.content}>
-            <div>
-                Main content
-                <div>Posts</div>
-                <div>Comments</div>
-            </div>
+            <MainContent/>
         </div>
     );
 }

@@ -1,0 +1,16 @@
+.post {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color:indianred;
+    gap:10px;
+}
+.post img {
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+}
+.buttonLike {
+    margin-left: 85%;
+}
