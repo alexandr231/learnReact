@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
-    height: 1000px;
+    height: 100wh;
     gap: 40px;
     margin: 30px 20px;
 }

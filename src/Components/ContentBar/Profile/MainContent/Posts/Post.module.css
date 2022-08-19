@@ -12,5 +12,8 @@
     border-radius: 30px;
 }
 .buttonLike {
-    margin-left: 85%;
+    flex-shrink: 1;
+}
+.PostMessage {
+    flex-shrink: 10;
 }
