@@ -1,10 +1,10 @@
 import classes from './Profile.module.css';
 import MainContent from './MainContent/MainContent';
 
-function Profile() {
+function Profile(props) {
     return (
         <div className={classes.content}>
-            <MainContent/>
+            <MainContent state = {props.state}/>
         </div>
     );
 }
