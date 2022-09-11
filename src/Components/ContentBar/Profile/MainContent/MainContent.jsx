@@ -1,3 +1,4 @@
+import state from '../../../../Redux/state';
 import classes from './MainContent.module.css';
 import Post from './Posts/Post'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
@@ -8,7 +9,7 @@ function MainContent(props) {
 
     return (
         <div className={classes.mainContent}>
-            <ProfileInfo/>
+            <ProfileInfo addPost = {props.addPost} updateChangedText = {props.updateChangedText} textValue = {props.state.textValue}/>
             <div className={classes.posts}>
                 {posts}
             </div>

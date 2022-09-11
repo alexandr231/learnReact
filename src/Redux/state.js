@@ -1,5 +1,8 @@
+import { rerenderEntireTree } from '../render';
+
 let state = {
     profilePage: { 
+        textValue: '',
         postData: [
             {id:1, message:'No epic fail today, my friends, tis brilliantly clear that this one is in the bag.' },
             {id:2, message:'Now, where did I put my snakeskin bag? Because this one, my friends, is in it!' },
@@ -27,6 +30,22 @@ let state = {
         ]
 
     },
+}
+
+export let addPost = () => {
+    let newPost = {
+        id: 8,
+        message: state.profilePage.textValue
+    }
+    state.profilePage.postData.push(newPost);
+    state.profilePage.textValue = '';
+    rerenderEntireTree(state);
+}
+
+export let updateChangedText = (text) => {
+    state.profilePage.textValue = text
+    rerenderEntireTree(state);
+
 }
 
 export default state;
