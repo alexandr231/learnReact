@@ -1,9 +1,7 @@
 let rerenderEntireTree = () => {
-<<<<<<< HEAD
-    alert('rerender');
-=======
+
   alert("hahaha");
->>>>>>> c301e4c61525a578ccb665082b336c588bb4b1de
+
 }
 
 export let state = {
@@ -55,12 +53,5 @@ export let updateChangedText = (text) => {
 }
 
 export let subscribe = (observer) => {
-<<<<<<< HEAD
-    rerenderEntireTree = observer;
-}
-
-export default state;
-=======
   rerenderEntireTree = observer;
 }
->>>>>>> c301e4c61525a578ccb665082b336c588bb4b1de
