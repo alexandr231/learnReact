@@ -16,7 +16,7 @@ function ProfileInfo(props) {
     return (
         <div className={classes.ProfileInfo}>
             <textarea onChange={textChanged} ref={newPostElement} value={props.textValue}></textarea>
-            <button onClick={addPost}>hi</button>
+            <button onClick={addPost}>Add post</button>
             Main content
         </div>
     );
