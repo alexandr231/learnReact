@@ -1,8 +1,12 @@
 let rerenderEntireTree = () => {
+<<<<<<< HEAD
     alert('rerender');
+=======
+  alert("hahaha");
+>>>>>>> c301e4c61525a578ccb665082b336c588bb4b1de
 }
 
-let state = {
+export let state = {
     profilePage: { 
         textValue: '',
         postData: [
@@ -41,17 +45,22 @@ export let addPost = () => {
     }
     state.profilePage.postData.push(newPost);
     state.profilePage.textValue = '';
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export let updateChangedText = (text) => {
     state.profilePage.textValue = text
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 
 }
 
 export let subscribe = (observer) => {
+<<<<<<< HEAD
     rerenderEntireTree = observer;
 }
 
 export default state;
+=======
+  rerenderEntireTree = observer;
+}
+>>>>>>> c301e4c61525a578ccb665082b336c588bb4b1de
