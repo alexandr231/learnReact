@@ -2,7 +2,7 @@ let rerenderEntireTree = () => {
   alert("hahaha");
 }
 
-let state = {
+export let state = {
     profilePage: { 
         textValue: '',
         postData: [
@@ -53,5 +53,3 @@ export let updateChangedText = (text) => {
 export let subscribe = (observer) => {
   rerenderEntireTree = observer;
 }
-
-export default state;

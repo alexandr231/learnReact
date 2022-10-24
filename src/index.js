@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { addPost, updateChangedText, state, subcribe } from './Redux/state';
+import { addPost, updateChangedText, state, subscribe } from './Redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = () => {
