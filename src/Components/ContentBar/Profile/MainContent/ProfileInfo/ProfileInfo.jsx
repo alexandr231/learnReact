@@ -10,7 +10,6 @@ function ProfileInfo(props) {
     let textChanged = () => {
         let text = newPostElement.current.value;
         props.updateChangedText(text);
-
     }
 
     return (
