@@ -5,11 +5,11 @@ function ProfileInfo(props) {
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type:'ADD-POST'});
     }
     let textChanged = () => {
         let text = newPostElement.current.value;
-        props.updateChangedText(text);
+        props.dispatch({type:'UPDATE-CHANGED-TEXT', newText: text});
     }
 
     return (

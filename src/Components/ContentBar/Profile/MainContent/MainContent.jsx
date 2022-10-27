@@ -9,7 +9,7 @@ function MainContent(props) {
 
     return (
         <div className={classes.mainContent}>
-            <ProfileInfo addPost = {props.addPost} updateChangedText = {props.updateChangedText} textValue = {props.state.textValue}/>
+            <ProfileInfo dispatch={props.dispatch} textValue = {props.state.textValue}/>
             <div className={classes.posts}>
                 {posts}
             </div>
