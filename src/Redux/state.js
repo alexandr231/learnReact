@@ -1,3 +1,6 @@
+const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
+const addPostType = 'ADD-POST';
+
 let store = {
     _state: {
         profilePage: {
@@ -47,7 +50,7 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === addPostType) {
             let newPost = {
 
                 id: 8,
@@ -58,14 +61,19 @@ let store = {
             this._state.profilePage.postData.push(newPost);
             this._state.profilePage.textValue = '';
             this._callSubscriber();
+            debugger;
 
-        } else if (action.type === 'UPDATE-CHANGED-TEXT') {
+        } else if (action.type === updateChangedTextType) {
             this._state.profilePage.textValue = action.newText
             this._callSubscriber();
+            debugger;
         }
 
 
     },
-}
+};
+
+export let actionCreatorAddPost = () => ({type:addPostType});
+export let actionCreatorUpdateChangedText = (text) => ({type:updateChangedTextType, newText: text});
 
 export default store;
