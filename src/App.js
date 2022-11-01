@@ -12,14 +12,13 @@ import Settings from './Components/ContentBar/Settings/Settings';
 
 function App(props) {
     return (
-        <BrowserRouter>
             <div className='wrapper'>
                 <Header />
                 <div className='second-row'>
                     <Navbar />
                     <div className='wrapper-content'>
                         <Routes>
-                            <Route path='/dialogs/*' element={<Dialogs state = {props.state.messagesPage}/>} />
+                            <Route path='/dialogs/*' element={<Dialogs state = {props.state.messagesPage} dispatch={props.dispatch}/>} />
                             <Route path='/profile' element={<Profile state = {props.state.profilePage} dispatch={props.dispatch}/>} />
                             <Route path='/news' element={<News />} />
                             <Route path='/music' element={<Music />} />
@@ -28,7 +27,6 @@ function App(props) {
                     </div>
                 </div>
             </div>
-        </BrowserRouter >
     );
 
 }

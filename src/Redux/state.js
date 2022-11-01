@@ -1,5 +1,7 @@
 const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
 const addPostType = 'ADD-POST';
+const addMessageType = "ADD-MESSAGE";
+const updateChangedMessageType = "UPDATE-MESSAGE";
 
 let store = {
     _state: {
@@ -27,7 +29,8 @@ let store = {
                 { id: 2, message: 'Bye' },
                 { id: 3, message: 'Sleep' },
                 { id: 4, message: 'Sfie' }
-            ]
+            ],
+            messageValue:'',
         },
     },
 
@@ -61,19 +64,32 @@ let store = {
             this._state.profilePage.postData.push(newPost);
             this._state.profilePage.textValue = '';
             this._callSubscriber();
-            debugger;
 
         } else if (action.type === updateChangedTextType) {
             this._state.profilePage.textValue = action.newText
             this._callSubscriber();
-            debugger;
+            
+        } else if (action.type === addMessageType) {
+            let newMessage = {
+
+                id: 5,
+                message: this._state.messagesPage.messageValue
+    
+            }
+    
+            this._state.messagesPage.messagesData.push(newMessage);
+            this._state.messagesPage.messageValue = '';
+            this._callSubscriber();
+        } else if (action.type === updateChangedMessageType) {
+            this._state.messagesPage.messageValue = action.newBody
+            this._callSubscriber();
         }
-
-
     },
 };
 
 export let actionCreatorAddPost = () => ({type:addPostType});
 export let actionCreatorUpdateChangedText = (text) => ({type:updateChangedTextType, newText: text});
+export let actionCreatorAddMessage = () => ({type:addMessageType});
+export let actionCreatorUpdateMessageText = (body) => ({type:updateChangedMessageType, newBody: body});
 
 export default store;
