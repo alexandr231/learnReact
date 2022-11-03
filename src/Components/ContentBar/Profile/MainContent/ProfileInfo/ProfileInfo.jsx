@@ -1,6 +1,6 @@
 import classes from './ProfileInfo.module.css';
 import React from 'react';
-import { actionCreatorAddPost, actionCreatorUpdateChangedText } from '../../../../../Redux/state';
+import { actionCreatorAddPost, actionCreatorUpdateChangedText } from '../../../../../Redux/profile-reducer';
 
 function ProfileInfo(props) {
 

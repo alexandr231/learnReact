@@ -1,7 +1,6 @@
-const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
-const addPostType = 'ADD-POST';
-const addMessageType = "ADD-MESSAGE";
-const updateChangedMessageType = "UPDATE-MESSAGE";
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -32,6 +31,9 @@ let store = {
             ],
             messageValue:'',
         },
+        sidebar: {
+
+        },
     },
 
     getState() {
@@ -53,43 +55,12 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === addPostType) {
-            let newPost = {
+        this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-                id: 8,
-                message: this._state.profilePage.textValue
-    
-            }
-    
-            this._state.profilePage.postData.push(newPost);
-            this._state.profilePage.textValue = '';
-            this._callSubscriber();
-
-        } else if (action.type === updateChangedTextType) {
-            this._state.profilePage.textValue = action.newText
-            this._callSubscriber();
-            
-        } else if (action.type === addMessageType) {
-            let newMessage = {
-
-                id: 5,
-                message: this._state.messagesPage.messageValue
-    
-            }
-    
-            this._state.messagesPage.messagesData.push(newMessage);
-            this._state.messagesPage.messageValue = '';
-            this._callSubscriber();
-        } else if (action.type === updateChangedMessageType) {
-            this._state.messagesPage.messageValue = action.newBody
-            this._callSubscriber();
-        }
+        this._callSubscriber();
     },
 };
-
-export let actionCreatorAddPost = () => ({type:addPostType});
-export let actionCreatorUpdateChangedText = (text) => ({type:updateChangedTextType, newText: text});
-export let actionCreatorAddMessage = () => ({type:addMessageType});
-export let actionCreatorUpdateMessageText = (body) => ({type:updateChangedMessageType, newBody: body});
 
 export default store;
