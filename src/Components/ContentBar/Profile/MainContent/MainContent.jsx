@@ -1,4 +1,3 @@
-import state from '../../../../Redux/state';
 import classes from './MainContent.module.css';
 import Post from './Posts/Post'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
