@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import classes from './Navbar.module.css';
+import classes from './Sidebar.module.css';
 
-function Navbar() {
+function Sidebar() {
     return (
-        <nav className={classes.nav}>
+        <nav className={classes.sidebar}>
             <div className={classes.item}>
                 <NavLink to='/profile'>Profile</NavLink>
             </div>
@@ -23,4 +23,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Sidebar;

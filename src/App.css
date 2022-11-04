@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
-    height: 100wh;
-    gap: 40px;
-    margin: 30px 20px;
+    background-color: rgb(110, 89, 138);
+    width: 100%;
+    height: 100%;
 }
 
 .second-row {

@@ -13,3 +13,8 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+.ProfileInfo {
+    display: flex;
+    flex-direction: column;
+}

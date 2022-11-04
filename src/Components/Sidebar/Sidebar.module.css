@@ -1,16 +1,16 @@
-.nav {
+.sidebar {
     padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background-color: khaki;
+    background-color: rgb(82, 153, 120);
     justify-content: flex-start;
-    gap: 10px;
 
 }
 
 .item {
     color: burlywood;
+    padding: 10px;
 }
 
 .item a {
