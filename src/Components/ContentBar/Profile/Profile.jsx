@@ -1,10 +1,10 @@
 import classes from './Profile.module.css';
-import MainContent from './MainContent/MainContent';
+import MainContentContainer from './MainContent/MainContentContainer';
 
 function Profile(props) {
     return (
         <div className={classes.content}>
-            <MainContent state = {props.state} dispatch={props.dispatch}/>
+            <MainContentContainer store={props.store}/>
         </div>
     );
 }
