@@ -17,22 +17,17 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case addPostType:
-            let newPost = {
-
-                id: 8,
-                message: state.textValue
-
-            }
-
-            state.postData.push(newPost);
-            state.textValue = '';
-
-            return state;
+            return {
+                ...state,
+                postData: [...state.postData,{id: 8, message: state.textValue}],
+                textValue: '',
+            };
 
         case updateChangedTextType:
-            state.textValue = action.newText
-
-            return state;
+            return {
+                ...state,
+                textValue: action.newText,
+            };
 
         default:
             return state;
