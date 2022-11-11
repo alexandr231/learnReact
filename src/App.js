@@ -7,6 +7,7 @@ import News from './Components/ContentBar/News/News';
 import Music from './Components/ContentBar/Music/Music';
 import Settings from './Components/ContentBar/Settings/Settings';
 import Sidebar from './Components/Sidebar/Sidebar';
+import UsersContainer from './Components/ContentBar/Users/UsersContainer';
 
 
 function App(props) {
@@ -22,6 +23,7 @@ function App(props) {
                             <Route path='/news' element={<News />} />
                             <Route path='/music' element={<Music />} />
                             <Route path='/settings' element={<Settings />} />
+                            <Route path='/users' element={<UsersContainer/>}/>
                         </Routes>
                     </div>
                 </div>

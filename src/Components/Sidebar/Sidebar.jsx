@@ -19,6 +19,9 @@ function Sidebar() {
             <div className={`${classes.item} ${classes.active}`}>
                 <NavLink to='/settings' className={classes.activeLink}>Settings</NavLink>
             </div>
+            <div className={classes.item}>
+                <NavLink to='/users'>Users</NavLink>
+            </div>
         </nav>
     );
 }
