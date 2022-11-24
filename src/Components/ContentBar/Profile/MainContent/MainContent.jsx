@@ -6,7 +6,7 @@ function MainContent(props) {
     let posts = props.posts.map(p => <Post id={p.id} message={p.message} />)
 
     let onAddPost = () => {
-        props.addPost();
+        props.AddPost();
     }
     let onTextChanged = (e) => {
         let text = e.target.value;

@@ -1,4 +1,4 @@
-import { actionCreatorAddPost, actionCreatorUpdateChangedText } from '../../../../Redux/profile-reducer';
+import { AddPost, UpdateChangedText } from '../../../../Redux/profile-reducer';
 import MainContent from './MainContent';
 import {connect} from 'react-redux';
 
@@ -9,16 +9,9 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addPost: () => {
-            dispatch(actionCreatorAddPost());
-        },
-        UpdateChangedText: (text) => {
-            dispatch(actionCreatorUpdateChangedText(text));
-        }
-    }
-}
-let MainContentContainer = connect(mapStateToProps, mapDispatchToProps)(MainContent);
+let MainContentContainer = connect(mapStateToProps, {
+    AddPost,
+    UpdateChangedText
+})(MainContent);
 
 export default MainContentContainer;
