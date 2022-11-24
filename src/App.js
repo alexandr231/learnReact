@@ -8,6 +8,7 @@ import Music from './Components/ContentBar/Music/Music';
 import Settings from './Components/ContentBar/Settings/Settings';
 import Sidebar from './Components/Sidebar/Sidebar';
 import UsersContainer from './Components/ContentBar/Users/UsersContainer';
+import ProfileContainer from './Components/ContentBar/Profile/ProfileContainer';
 
 
 function App(props) {
@@ -18,8 +19,8 @@ function App(props) {
                     <Sidebar />
                     <div className='wrapper-content'>
                         <Routes>
-                            <Route path='/dialogs/*' element={<DialogsContainer store={props.store}/>} />
-                            <Route path='/profile' element={<Profile store={props.store}/>} />
+                            <Route path='/dialogs/*' element={<DialogsContainer />} />
+                            <Route path='/profile/*' element={<ProfileContainer />} />
                             <Route path='/news' element={<News />} />
                             <Route path='/music' element={<Music />} />
                             <Route path='/settings' element={<Settings />} />

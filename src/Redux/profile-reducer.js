@@ -1,5 +1,6 @@
 const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
 const addPostType = 'ADD-POST';
+const setUserProfileType = 'SET-USER-PROFILE'
 
 let initialState = {
     textValue: '',
@@ -11,7 +12,8 @@ let initialState = {
         { id: 5, message: 'Lost' },
         { id: 6, message: "win" },
         { id: 7, message: "pasha " }
-    ]
+    ],
+    profile: null,
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -28,7 +30,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 textValue: action.newText,
             };
-
+        case setUserProfileType:
+            return {
+                ...state,
+                profile: action.profile
+            }
         default:
             return state;
     }
@@ -36,5 +42,6 @@ const profileReducer = (state = initialState, action) => {
 
 export let AddPost = () => ({ type: addPostType });
 export let UpdateChangedText = (text) => ({ type: updateChangedTextType, newText: text });
+export let SetUserProfile = (profile) => ({type: setUserProfileType, profile})
 
 export default profileReducer;
