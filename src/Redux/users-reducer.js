@@ -10,7 +10,6 @@ let initialState = {
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case FollowType:
-            debugger;
             return {
                 ...state,
                 users: state.users.map((u) => {
@@ -24,7 +23,6 @@ const usersReducer = (state = initialState, action) => {
                 })
             };
         case UnfollowType:
-            debugger;
             return {
                 ...state,
                 users: state.users.map((u) => {
