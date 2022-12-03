@@ -18,15 +18,16 @@ function Users(props) {
 
         {props.users.map(u => <div key={u.id} className={classes.avaFollow}>
             <div>
-                <NavLink to={'/profile/'+u.id}>
+                <NavLink to={'/profile/' + u.id}>
                     <img src={u.photos.small != null
                         ? u.photos.small
                         : "https://avatars.mds.yandex.net/i?id=8612e9d6865f27632476a0c7e39237f0def4f025-5869170-images-thumbs&n=13&exp=1"}
                         className={classes.ava}></img>
-                    {u.followed
-                        ? <button onClick={() => props.Unfollow(u.id)}>Unfollow</button>
-                        : <button onClick={() => props.Follow(u.id)}>Follow</button>}
                 </NavLink>
+                {u.followed
+                    ? <button onClick={() => props.Unfollow(u.id)}>Unfollow</button>
+                    : <button onClick={() => props.Follow(u.id)}>Follow</button>}
+
             </div>
             <div className={classes.description}>
                 <div className={classes.nameStatus}>

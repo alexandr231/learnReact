@@ -11,7 +11,7 @@ let initialState = {
     ],
     currentPage: 1,
     pageSize: 5,
-    totalCount: 21,
+    totalCount: 50,
     isFetching: false,
 }
 

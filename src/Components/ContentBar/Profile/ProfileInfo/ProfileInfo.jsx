@@ -2,7 +2,6 @@ import React from 'react'
 import Preloader from '../../../Preloader/Preloader'
 
 function ProfileInfo(props) {
-    debugger;
     return props.profile
         ? <div>
             <img src={props.profile.photos.large}></img>
