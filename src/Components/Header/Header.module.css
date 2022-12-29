@@ -10,3 +10,7 @@
 .header img {
     width: 50px;
 }
+.login {
+    text-decoration: none;
+    color: firebrick
+}
