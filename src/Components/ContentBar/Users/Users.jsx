@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import classes from './Users.module.css';
@@ -25,8 +26,28 @@ function Users(props) {
                         className={classes.ava}></img>
                 </NavLink>
                 {u.followed
-                    ? <button onClick={() => props.Unfollow(u.id)}>Unfollow</button>
-                    : <button onClick={() => props.Follow(u.id)}>Follow</button>}
+                    ? <button onClick={() => {
+                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                            withCredentials: true,
+                            headers: {
+                                "API-KEY" : "1cc0a49a-b9dd-4068-acfd-12ab0249400b"
+                            }
+                        }).then(response => {
+                            if (response.data.resultCode === 0) {
+                                props.Unfollow(u.id)
+                            }
+                        })}}>Unfollow</button>
+                    : <button onClick={() => {
+                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                            withCredentials: true,
+                            headers: {
+                                "API-KEY" : "1cc0a49a-b9dd-4068-acfd-12ab0249400b"
+                            }
+                        }).then(response => {
+                            if (response.data.resultCode === 0) {
+                                props.Follow(u.id)
+                            }
+                        })}}>Follow</button>}
 
             </div>
             <div className={classes.description}>
