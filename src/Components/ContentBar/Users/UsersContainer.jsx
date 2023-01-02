@@ -4,15 +4,14 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Users from './Users';
 import Preloader from '../../Preloader/Preloader';
+import { UsersAPI } from '../../../API/API';
 
 class UsersContainer extends Component {
 
     componentDidMount() {
         this.props.ToggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
-            withCredentials:true
-        }).then(response => {
-            this.props.SetUsers(response.data.items);
+        UsersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(response => {
+            this.props.SetUsers(response.items);
             this.props.ToggleIsFetching(false);
             //this.props.SetTotalCount(response.data.totalCount);
         });
@@ -21,10 +20,8 @@ class UsersContainer extends Component {
     onPageChanged = (pageNumber) => {
         this.props.ToggleIsFetching(true);
         this.props.SetCurrentPage(pageNumber);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
-            withCredentials: true
-        }).then(response => {
-            this.props.SetUsers(response.data.items);
+        UsersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(response => {
+            this.props.SetUsers(response.items);
             this.props.ToggleIsFetching(false);
         });
     }
