@@ -27,19 +27,21 @@ function Users(props) {
                         className={classes.ava}></img>
                 </NavLink>
                 {u.followed
-                    ? <button onClick={() => {
+                    ? <button disabled = {props.FollowingInProgress.includes(u.id)} onClick={() => {
+                        props.ToggleFollowingInProgress(true, u.id);
                         FollowApi.unfollow(u.id).then(response => {
-                            debugger;
                             if (response.resultCode === 0) {
                                 props.Unfollow(u.id);
                             }
+                            props.ToggleFollowingInProgress(false, u.id)
                         })}}>Unfollow</button>
-                    : <button onClick={() => {
+                    : <button disabled = {props.FollowingInProgress.includes(u.id)} onClick={() => {
+                        props.ToggleFollowingInProgress(true, u.id);
                         FollowApi.follow(u.id).then(response => {
-                            debugger;
                             if (response.resultCode === 0) {
                                 props.Follow(u.id);
                             }
+                            props.ToggleFollowingInProgress(false, u.id)
                         })}}>Follow</button>}
 
             </div>
