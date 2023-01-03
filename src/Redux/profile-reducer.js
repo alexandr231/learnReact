@@ -1,3 +1,5 @@
+import { ProfileAPI } from "../API/API";
+
 const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
 const addPostType = 'ADD-POST';
 const setUserProfileType = 'SET-USER-PROFILE'
@@ -43,5 +45,13 @@ const profileReducer = (state = initialState, action) => {
 export let AddPost = () => ({ type: addPostType });
 export let UpdateChangedText = (text) => ({ type: updateChangedTextType, newText: text });
 export let SetUserProfile = (profile) => ({type: setUserProfileType, profile})
+
+export const getProfile = (userID) => {
+    return (dispatch) => {
+        ProfileAPI.getProfile(userID).then( response => {
+            dispatch(SetUserProfile(response));
+        });
+    }
+}
 
 export default profileReducer;

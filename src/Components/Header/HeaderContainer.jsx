@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import {SetAuthUserData, ToggleIsFetching} from '../../Redux/auth-reducer'
+import {auth, SetAuthUserData, ToggleIsFetching} from '../../Redux/auth-reducer'
 import Preloader from '../Preloader/Preloader'
 import Header from './Header'
 import { connect } from 'react-redux';
+import { AuthAPI } from '../../API/API'
 
 class HeaderContainer extends Component {
   render() {
@@ -12,16 +13,7 @@ class HeaderContainer extends Component {
         <Header {...this.props}></Header>
   }
   componentDidMount() {
-    this.props.ToggleIsFetching(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
-        withCredentials: true,
-    }).then(response => {
-        if (response.data.resultCode === 0) {
-            let {email, id, login} = response.data.data
-            this.props.SetAuthUserData(login, email, id)
-        }
-        this.props.ToggleIsFetching(false);
-    });
+    this.props.auth();
   }
 }
 
@@ -38,5 +30,6 @@ let mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     SetAuthUserData,
-    ToggleIsFetching
+    ToggleIsFetching,
+    auth
 })(HeaderContainer);

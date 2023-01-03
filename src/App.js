@@ -8,6 +8,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import UsersContainer from './Components/ContentBar/Users/UsersContainer';
 import ProfileContainer from './Components/ContentBar/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
+import Login from './Components/Login/Login';
 
 
 function App(props) {
@@ -25,6 +26,7 @@ function App(props) {
                             <Route path='/music' element={<Music />} />
                             <Route path='/settings' element={<Settings />} />
                             <Route path='/users' element={<UsersContainer/>}/>
+                            <Route path='/login' element={<Login/>}/>
                         </Routes>
                     </div>
                 </div>
