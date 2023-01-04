@@ -4,6 +4,7 @@ import axios from 'axios';import React, { Component } from 'react';
 import Users from './Users';
 import Preloader from '../../Preloader/Preloader';
 import { withAuthRedirect } from '../../../HOC/withAuthRedirect';
+import { compose } from 'redux';
 
 class UsersContainer extends Component {
 
@@ -37,11 +38,14 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {
-    Follow,
-    Unfollow,
-    SetCurrentPage,
-    ToggleIsFetching,
-    ToggleFollowingInProgress,
-    getUsers
-})(withAuthRedirect(UsersContainer));
+export default compose(
+    connect(mapStateToProps, {
+        Follow,
+        Unfollow,
+        SetCurrentPage,
+        ToggleIsFetching,
+        ToggleFollowingInProgress,
+        getUsers
+    }),
+    withAuthRedirect
+)(UsersContainer);
