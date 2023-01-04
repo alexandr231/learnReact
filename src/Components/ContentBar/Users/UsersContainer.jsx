@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';import React, { Component } from 'react';
 import Users from './Users';
 import Preloader from '../../Preloader/Preloader';
+import { withAuthRedirect } from '../../../HOC/withAuthRedirect';
 
 class UsersContainer extends Component {
 
@@ -43,4 +44,4 @@ export default connect(mapStateToProps, {
     ToggleIsFetching,
     ToggleFollowingInProgress,
     getUsers
-})(UsersContainer);
+})(withAuthRedirect(UsersContainer));
