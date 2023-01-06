@@ -15,7 +15,7 @@ function ProfileInfo(props) {
                 : <div>Работаю</div>}
             </div>
             <div>
-                <ProfileStatus status = 'hahahahah'></ProfileStatus>
+                <ProfileStatus updateStatus={props.updateStatus} status={props.status}></ProfileStatus>
             </div>
         </div>
         : <Preloader />
