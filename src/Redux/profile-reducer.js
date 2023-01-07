@@ -6,7 +6,6 @@ const setUserProfileType = 'SET-USER-PROFILE'
 const setUserStatusType = 'SET-USER-STATUS'
 
 let initialState = {
-    textValue: '',
     postData: [
         { id: 1, message: 'No epic fail today, my friends, tis brilliantly clear that this one is in the bag.' },
         { id: 2, message: 'Now, where did I put my snakeskin bag? Because this one, my friends, is in it!' },
@@ -25,14 +24,7 @@ const profileReducer = (state = initialState, action) => {
         case addPostType:
             return {
                 ...state,
-                postData: [...state.postData,{id: 8, message: state.textValue}],
-                textValue: '',
-            };
-
-        case updateChangedTextType:
-            return {
-                ...state,
-                textValue: action.newText,
+                postData: [...state.postData,{id: 8, message: action.textValue}],
             };
         case setUserProfileType:
             return {
@@ -49,8 +41,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const AddPost = () => ({ type: addPostType });
-export const UpdateChangedText = (text) => ({ type: updateChangedTextType, newText: text });
+export const AddPost = (textValue) => ({ type: addPostType, textValue });
 export const SetUserProfile = (profile) => ({type: setUserProfileType, profile})
 export const SetUserStatus = (status) => ({type: setUserStatusType, status})
 
