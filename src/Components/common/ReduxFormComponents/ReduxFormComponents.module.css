@@ -1,0 +1,10 @@
+.reduxFormComponent.error input {
+    border: solid red 2px;
+}
+
+.reduxFormComponent.error textarea {
+    border: solid red 2px;
+}
+.reduxFormComponent.error span {
+    color: red;
+}

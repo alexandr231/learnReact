@@ -2,7 +2,7 @@ import { Follow, Unfollow, SetCurrentPage, ToggleIsFetching, ToggleFollowingInPr
 import { connect } from 'react-redux';
 import axios from 'axios';import React, { Component } from 'react';
 import Users from './Users';
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../common/Preloader/Preloader';
 import { withAuthRedirect } from '../../../HOC/withAuthRedirect';
 import { compose } from 'redux';
 

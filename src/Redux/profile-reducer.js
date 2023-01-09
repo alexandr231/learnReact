@@ -1,6 +1,5 @@
 import { ProfileAPI } from "../API/API";
 
-const updateChangedTextType = 'UPDATE-CHANGED-TEXT';
 const addPostType = 'ADD-POST';
 const setUserProfileType = 'SET-USER-PROFILE'
 const setUserStatusType = 'SET-USER-STATUS'

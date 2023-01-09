@@ -1,6 +1,7 @@
 import classes from './MainContent.module.css';
 import Post from './Posts/Post'
-import { Field, reduxForm } from 'redux-form'
+import AddPostReduxForm from './AddPostReduxForm'
+
 
 function MainContent(props) {
 
@@ -15,20 +16,5 @@ function MainContent(props) {
         </div>
     );
 }
-
-function AddPostForm(props) {
-    return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field component="input" name="newPostText" type="text"></Field>
-            </div>
-            <div>
-                <button>add post</button>
-            </div>
-        </form>
-    )
-}
-
-let AddPostReduxForm = reduxForm({ form: 'addPost' })(AddPostForm);
 
 export default MainContent;
