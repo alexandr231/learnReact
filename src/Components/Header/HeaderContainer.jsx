@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {auth, SetAuthUserData, ToggleIsFetching} from '../../Redux/auth-reducer'
+import {auth, SetAuthUserData, ToggleIsFetching, logout} from '../../Redux/auth-reducer'
 import Preloader from '../common/Preloader/Preloader'
 import Header from './Header'
 import { connect } from 'react-redux';
@@ -31,6 +31,7 @@ export default compose(
     connect(mapStateToProps, {
         SetAuthUserData,
         ToggleIsFetching,
-        auth
+        auth,
+        logout
     })
 )(HeaderContainer);

@@ -17,7 +17,6 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data,
-                isAuth: true
             };
         case TogleIsFetchingType:
             return {
@@ -29,20 +28,42 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export let SetAuthUserData = (login, email, userId) => ({ type: SetAuthUserDataType, data: { login, email, userId } });
+export let SetAuthUserData = (login, email, userId, isAuth) => ({ type: SetAuthUserDataType, data: { login, email, userId, isAuth } });
 export let ToggleIsFetching = (isFetching) => ({ type: TogleIsFetchingType, isFetching });
 
-export const auth = (userID) => {
+export const auth = () => {
 
     return (dispatch) => {
         dispatch(ToggleIsFetching(true));
         AuthAPI.auth().then(response => {
             if (response.resultCode === 0) {
                 let { email, id, login } = response.data;
-                dispatch(SetAuthUserData(login, email, id));
+                dispatch(SetAuthUserData(login, email, id, true));
             }
             dispatch(ToggleIsFetching(false));
         });
+    }
+}
+
+export const login = (login, password, rememberMe) => {
+
+    return (dispatch) => {
+        AuthAPI.login(login, password, rememberMe).then(response => {
+            if (response.resultCode === 0) {
+                dispatch(auth);
+            }
+        })
+    }
+}
+
+export const logout = () => {
+
+    return (dispatch) => {
+        AuthAPI.logout().then(response => {
+            if (response.resultCode === 0) {
+                dispatch(SetAuthUserData(null, null, null, false));
+            }
+        })
     }
 }
 
