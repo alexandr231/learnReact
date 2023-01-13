@@ -50,7 +50,7 @@ export const login = (login, password, rememberMe) => {
     return (dispatch) => {
         AuthAPI.login(login, password, rememberMe).then(response => {
             if (response.resultCode === 0) {
-                dispatch(auth);
+                dispatch(auth());
             }
         })
     }

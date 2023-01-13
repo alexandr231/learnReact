@@ -9,8 +9,11 @@ function Login(props) {
         let {email, password, rememberMe} = loginData;
         props.login(email, password, rememberMe);
     }
-
-    if (props.isAuth) return <Navigate to='/profile'/>
+    
+    if (props.isAuth) {
+        debugger;
+        return <Navigate to='/profile'/>
+    }
 
     return (
         <div>
