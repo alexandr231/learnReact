@@ -8,3 +8,12 @@
 .reduxFormComponent.error span {
     color: red;
 }
+
+.loginError {
+    color: red;
+    border: solid red 2px;
+}
+
+.reduxFormComponent {
+    margin:5px;
+}
