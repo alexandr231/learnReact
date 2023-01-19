@@ -24,7 +24,9 @@ export const Initialize = () => {
 
     return (dispatch) => {
         let promise = dispatch(auth());
-        Promise.all([promise]).then
+        Promise.all([promise]).then( () => {
+            dispatch(SetInitialized());
+        })
     }
 }
 

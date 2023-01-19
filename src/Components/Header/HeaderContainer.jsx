@@ -11,9 +11,6 @@ class HeaderContainer extends Component {
         <Preloader></Preloader>  :
         <Header {...this.props}></Header>
   }
-  componentDidMount() {
-    this.props.auth();
-  }
 }
 
 
@@ -31,7 +28,6 @@ export default compose(
     connect(mapStateToProps, {
         SetAuthUserData,
         ToggleIsFetching,
-        auth,
         logout
     })
 )(HeaderContainer);
