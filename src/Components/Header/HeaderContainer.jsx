@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import {auth, SetAuthUserData, ToggleIsFetching, logout} from '../../Redux/auth-reducer'
+import { Component } from 'react';
+import { SetAuthUserData, ToggleIsFetching, logout } from '../../Redux/auth-reducer';
 import Preloader from '../common/Preloader/Preloader'
 import Header from './Header'
 import { connect } from 'react-redux';

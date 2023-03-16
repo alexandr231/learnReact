@@ -1,6 +1,6 @@
 import { Follow, Unfollow, SetCurrentPage, ToggleIsFetching, ToggleFollowingInProgress, getUsers } from '../../../Redux/users-reducer';
 import { connect } from 'react-redux';
-import axios from 'axios';import React, { Component } from 'react';
+import React, { Component } from 'react';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
 import { withAuthRedirect } from '../../../HOC/withAuthRedirect';

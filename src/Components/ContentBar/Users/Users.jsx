@@ -1,7 +1,4 @@
-import axios from 'axios';
-import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { FollowApi, UsersAPI } from '../../../API/API';
 import classes from './Users.module.css';
 
 function Users(props) {
@@ -21,7 +18,7 @@ function Users(props) {
         {props.users.map(u => <div key={u.id} className={classes.avaFollow}>
             <div>
                 <NavLink to={'/profile/' + u.id}>
-                    <img src={u.photos.small != null
+                    <img alt='' src={u.photos.small != null
                         ? u.photos.small
                         : "https://avatars.mds.yandex.net/i?id=8612e9d6865f27632476a0c7e39237f0def4f025-5869170-images-thumbs&n=13&exp=1"}
                         className={classes.ava}></img>

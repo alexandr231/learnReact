@@ -1,10 +1,9 @@
 
-import React, { Component } from 'react'
+import { Component } from 'react';
 import Profile from './Profile'
 import { connect } from 'react-redux';
 import { getProfile, SetUserProfile, getStatus, updateStatus } from '../../../Redux/profile-reducer';
 import { useParams } from 'react-router-dom';
-import { withAuthRedirect } from '../../../HOC/withAuthRedirect';
 import { compose } from 'redux';
 
 export function withRouter(Children) {
